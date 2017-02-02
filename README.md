@@ -10,7 +10,7 @@ __UPDATE__: This branch, when ready will enable writing I2C slave code which doe
 
 For an example Pi master code working at 160Kbps with the *FastSafeSlave.ino* example see here (**TODO**)
 
-__What's written below about the clock stretching is true if you use the old coding style, but you can easiliy avoid the reliability issues related to clock-streching of the salve as mentioed above.__
+__What's written below about the clock stretching is true if you use the old coding style, but you can easiliy avoid the reliability issues related to clock-streching of the salve as mentioned above.__
 
 Since (most of) the ATTinys lack TWI module for implementing all the nitty-gritty of I2C in hardware
 they will have to do some clock-stretching (at least if run at 8MHz, you may get away with more on higher clock speeds)

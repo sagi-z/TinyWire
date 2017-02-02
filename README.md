@@ -6,6 +6,12 @@ Modified to support ATtiny44/84
 
 ## NOTE about reliable communication
 
+__UPDATE__: This branch, when ready will enable writing I2C slave code which does not strech the clock and hence is 100% reliable with the raspberry pi (verified on Pi2 and Pi3). Tests with a slave on the ATtiny84@8MHZ(internal) reached 160K bits per second of __data__ (20K bytes per second of data received by the Pi I2C master!) with 0% errors.
+
+For an example Pi master code working at 160Kbps with the *FastSafeSlave.ino* example see (**TODO**)
+
+__What's written below is true if you use the old coding style in the examples, but you can easiliy avoid the reliability issues related to clock-streching of the salve as mentioed above.___
+
 Since (most of) the ATTinys lack TWI module for implementing all the nitty-gritty of I2C in hardware
 they will have to do some clock-stretching (at least if run at 8MHz, you may get away with more on higher clock speeds)
 as specified in the I2C protocol. However some (especially "bit-banged") master implementations do not
